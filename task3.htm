@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Verilmiş cümləni tersinə çevirən bir funksiyanı yaz. Sözlər arası boşluqlar saxlanmalıdır.
+misal: input : "Bu gün hava çox gözəldir" 
+output: "ridəlög xoç avah nüg uB" -->
+<input type="text" id="yazilar" placeholder="Soz yaz">
+<button onclick="yoxla()">Yoxla</button>
+<p id="ntc"></p>
+
+ <script>
+    const yazilar=document.getElementById('yazilar').value
+    const ntc=document.getElementById('ntc')
+    function yoxla(){
+        const yazilar=document.getElementById('yazilar').value
+        let ters=yazilar.split('').reverse().join('')
+      ntc.innerHTML=ters
+    }
+ </script>
+</body>
+</html>

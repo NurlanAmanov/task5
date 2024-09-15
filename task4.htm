@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta itemset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unikal Simvolları Göstər</title>
+    <style>
+      
+    </style>
+</head>
+<body>
+    <input type="text" id="a" placeholder="Simvolları daxil edin">
+    <button onclick="yoxla()">Göstər</button>
+    <div id="ntc"></div>
+
+    <script>
+        function yoxla() {
+            const a = document.getElementById("a").value; 
+            const ntc = document.getElementById("ntc"); 
+            const yenideyer = new Map();
+
+        
+            a.split('').forEach(item => {
+                yenideyer.set(item, (yenideyer.get(item) || 0) + 1);
+            });
+
+           
+            const deyerim = Array.from(yenideyer.entries())
+                .filter(([item, ntc]) => ntc === 1) 
+                .map(([item]) => item) 
+                .join(', '); 
+
+    
+            ntc.innerHTML = `Unikal simvollar: ${deyerim || 'Yoxdur'}`;
+        }
+    </script>
+</body>
+</html>
